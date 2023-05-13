@@ -24,9 +24,9 @@ function handleSubmit() {
   let num2 = $("#num2").val();
   //saves calculation to a new object
   let newCalc = {
-    num1,
-    operator,
-    num2,
+    num1: num1,
+    operator: operator,
+    num2: num2,
   };
   console.log("New calculation submitted:", newCalc);
   //Posts new calculation object to server
