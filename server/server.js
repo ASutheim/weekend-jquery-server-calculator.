@@ -22,8 +22,8 @@ app.post("/new", function (req, res) {
   allCalculations.unshift(newCalc);
   console.log(allCalculations);
   //sends happy face code back to client
-  res.send(201);
   processCalculations(allCalculations);
+  res.send(allCalculations);
 });
 
 function processCalculations() {
@@ -33,4 +33,5 @@ function processCalculations() {
       console.log(each);
     } else console.log("Not yet");
   }
+  return allCalculations;
 }
