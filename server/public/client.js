@@ -7,6 +7,7 @@ function onReady() {
   $("#multiply-btn").on("click", handleOperator);
   $("#divide-btn").on("click", handleOperator);
   $("#equals-btn").on("click", handleSubmit);
+  $("#clear-btn").on("click", handleClear);
 }
 
 let operator;
@@ -76,4 +77,9 @@ function renderCalculations(array) {
     ${array[i].answer}
     </p>`);
   }
+}
+
+function handleClear() {
+  $("#num1").val("");
+  $("#num2").val("");
 }
