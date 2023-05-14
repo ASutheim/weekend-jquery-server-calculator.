@@ -28,10 +28,19 @@ app.post("/new", function (req, res) {
 
 function processCalculations() {
   for (each of allCalculations) {
-    if (each.operator === "+") {
+    if (each.operator === `+`) {
       each.answer = parseInt(each.num1) + parseInt(each.num2);
       console.log(each);
-    } else console.log("Not yet");
+    } else if (each.operator === `-`) {
+      each.answer = parseInt(each.num1) - parseInt(each.num2);
+      console.log(each);
+    } else if (each.operator === `*`) {
+      each.answer = parseInt(each.num1) * parseInt(each.num2);
+      console.log(each);
+    } else if (each.operator === `/`) {
+      each.answer = parseInt(each.num1) / parseInt(each.num2);
+      console.log(each);
+    }
   }
   return allCalculations;
 }

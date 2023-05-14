@@ -4,16 +4,15 @@ function onReady() {
   // event listeners
   $("#plus-btn").on("click", handleOperator);
   $("#minus-btn").on("click", handleOperator);
+  $("#multiply-btn").on("click", handleOperator);
+  $("#divide-btn").on("click", handleOperator);
   $("#equals-btn").on("click", handleSubmit);
 }
 
 let operator;
 
 function handleOperator() {
-  //   operator = $(this).data("operator");
-  //   console.log(operator);
-  //operator = button;
-
+  //captures the button click on the chosen operator and saves it to a variable
   operator = $(this).val();
   console.log(operator);
 }
@@ -29,12 +28,15 @@ function handleSubmit() {
     num2: num2,
   };
   console.log("New calculation submitted:", newCalc);
+
   //Posts new calculation object to server
   $.ajax({
     method: "POST",
     url: "/new",
     data: newCalc,
   })
+
+    //Receives back an array of completed calculations and sends them to a render function
     .then(function (response) {
       console.log(response);
       renderCalculations(response);
@@ -42,6 +44,7 @@ function handleSubmit() {
     .catch(function (error) {
       alert("post failed:", error);
     });
+
   //Empties out input fields
   $("#num1").val("");
   $("#num2").val("");
