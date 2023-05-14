@@ -1,0 +1,23 @@
+h1 {
+  text-align: center;
+}
+
+#calculator {
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  padding: 10px;
+  width: 80%;
+  margin: 0 auto;
+  background-color: rgb(205, 232, 233);
+}
+
+#most-recent-calc {
+  border-style: solid;
+  border-color: gray;
+  border-width: 1px;
+  padding: 10px;
+  width: 80%;
+  margin: 2 auto;
+  background-color: white;
+}

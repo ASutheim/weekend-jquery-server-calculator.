@@ -6,23 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="./jquery.js"></script>
     <script src="./client.js"></script>
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./styles.css" />
     <title>JQuery Server Calculator</title>
   </head>
   <body>
     <h1>A Very Basic Calculator!</h1>
-
-    <input type="text" id="num1" placeholder="number" /> <br />
-    <button type="button" id="plus-btn" value="+">+</button>
-    <button type="button" id="minus-btn" value="-">-</button>
-    <button type="button" id="multiply-btn" value="*">*</button>
-    <button type="button" id="divide-btn" value="/">/</button>
+    <div id="calculator">
+      <input type="text" id="num1" placeholder="number" /> <br />
+      <button type="button" id="plus-btn" value="+">+</button>
+      <button type="button" id="minus-btn" value="-">-</button>
+      <button type="button" id="multiply-btn" value="*">*</button>
+      <button type="button" id="divide-btn" value="/">/</button>
+      <br />
+      <input type="text" id="num2" placeholder="number" /> <br />
+      <button type="button" id="equals-btn">=</button>
+      <button type="button" id="clear-btn">clear</button>
+      <div id="most-recent-calc"></div>
+    </div>
     <br />
-    <input type="text" id="num2" placeholder="number" /> <br />
-    <button type="button" id="equals-btn">=</button>
-    <button type="button" id="clear-btn">clear</button>
-    <div id="most-recent-calc">placeholder for most recent calc</div>
-    <br />
-    <div id="calc-history">Calculation History:</div>
+    <p>Calculation History:</p>
+    <div id="calc-history"></div>
   </body>
 </html>
