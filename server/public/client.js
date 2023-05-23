@@ -8,6 +8,8 @@ function onReady() {
   $("#divide-btn").on("click", handleOperator);
   $("#equals-btn").on("click", handleSubmit);
   $("#clear-btn").on("click", handleClear);
+
+  getCalculations();
 }
 
 let operator;
@@ -18,7 +20,25 @@ function handleOperator() {
   console.log(operator);
 }
 
-function handleSubmit() {
+function getCalculations() {
+  console.log("inside getfunction");
+  //Sends a GET request to the server for all calculations
+  $.ajax({
+    type: "GET",
+    url: "/tasks",
+  })
+    //Passes response to the render function
+    .then(function (response) {
+      console.log(response);
+      renderCalculations(response);
+    })
+    .catch(function (error) {
+      console.log("error in GET", error);
+    });
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
   //sets variables to the actual values of the number input fields
   let num1 = $("#num1").val();
   let num2 = $("#num2").val();
